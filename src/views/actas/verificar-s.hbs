@@ -1,0 +1,233 @@
+<div class="row title">
+          <div class="col text-center">
+              <h1>CENTRO: <span class="resaltar"> {{acta.centro}} </span></h1>
+              
+              <h2>ACTA: <span class="resaltar">SENATORIAL</span>   COLEGIO: <span class="resaltar">{{acta.colegio}}</span> </h2>
+          </div>
+      </div>
+      <div class="row justify-content-center align-items-center">
+          <div class="col-12 col-sm-6">
+              <div class="card">
+                  <div class="card-body">
+                      <form class="form-container" action="/actas/actualizar/s" method="POST" id="formActaS">
+                      <input type="hidden" name="centro" value="{{acta.centro}}">
+                      <input type="hidden" name="colegio" value="{{acta.colegio}}">
+                      <input type="hidden" name="municipio" value="{{acta.municipio}}">
+                      <input type="hidden" name="digitador" value="{{acta.digitador}}">
+                <div class="form-group row">
+                  <label for="pld" class="col-sm-3 col-form-label">1.PLD</label>
+                  <div class="col-sm-9">
+                    <input type="number" name="votos[pld]" value="{{acta.votos.pld}}" class="form-control" id="inputEmail3" min="0" max="999" required>
+                  </div>
+                </div>
+                <div class="form-group row">
+                    <label for="prm" class="col-sm-3 col-form-label">2.PRM</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[prm]" value="{{acta.votos.prm}}" class="form-control" id="inputEmail3"  min="0" required>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="prd"  class="col-sm-3 col-form-label">3.PRD</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[prd]" value="{{acta.votos.prd}}" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">4.PRSC</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[prsc]" value="{{acta.votos.prsc}}" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">5.ALPAIS</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[alpais]" value="{{acta.votos.alpais}}" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">6.PHD</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[phd]" value="{{acta.votos.phd}}" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">7.MODA</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[moda]" value="{{acta.votos.moda}}" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">8.BIS</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[bis]" value="{{acta.votos.bis}}" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">9.PCR</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[pcr]" value="{{acta.votos.pcr}}" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">10.DXC</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[dxc]" value="{{acta.votos.dxc}}" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">11.F. AMPLIO</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[famplio]" value="{{acta.votos.famplio}}" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">12.UDC</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[udc]" value="{{acta.votos.udc}}" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">13.PQDC</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[pqdc]" value="{{acta.votos.pqdc}}" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">14.PLR</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[plr]" value="{{acta.votos.plr}}" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">15.FP</label>
+                    <div class="col-sm-9">
+                      <input disabled type="number" name="votos[fp]" value="{{acta.votos.fp}}" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">16.FNP</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[fnp]" value="{{acta.votos.fnp}}" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">17.APD</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[apd]" value="{{acta.votos.apd}}" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">18.VERDE</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[verde]" value="{{acta.votos.verde}}" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">19.PPC</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[ppc]" value="{{acta.votos.ppc}}" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">20.PAL</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[pal]" value="{{acta.votos.pal}}" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">21.PRSD</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[prsd]" value="{{acta.votos.prsd}}" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">22.PDP</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[pdp]" value="{{acta.votos.pdp}}" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">23.PDI</label>
+                    <div class="col-sm-9">
+                      <input disabled type="number" name="votos[pdi]" value="{{acta.votos.pdi}}" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">24.PRI</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[pri]" value="{{acta.votos.pri}}" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">25.PUN</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[pun]" value="{{acta.votos.pun}}" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">26.PNVC</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[pnvc]" value="{{acta.votos.pnvc}}" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">27.PP</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[pp]" value="{{acta.votos.pp}}" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">VOTOS NULOS</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votosNulos" value="{{acta.votosNulos}}" class="form-control" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">BOLETAS OBSERVADAS</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="boletasObservadas" value="{{acta.boletasObservadas}}" class="form-control" required min="0">
+                    </div>
+                  </div>
+                <div class="form-group row justify-content-between">
+                    <div class="col-sm-4">
+                        <a href="../actas/verificar " class=" btn btn-danger" style="width: 10em;">Atras</a>
+                      </div>
+                  <div class="col-sm-4 ">
+                    <button type="submit" class="btn btn-primary" style="width: 10em;" id="btnEnviar">Enviar</button>
+                  </div>
+                </div>
+              </form>
+          </div>
+                  </div>
+              </div>          
+      </div>
+
+      <script src="/socket.io/socket.io.js" charset="utf-8"></script>
+      <script>
+        const socket = io('http://104.248.116.77');
+
+        const btnEviar = document.getElementById('btnEnviar');
+        const form = document.getElementById('formActaS');
+        
+
+       form.addEventListener('submit', () => {
+         socket.emit('chart:update', {
+            updateChart: true
+         });
+       });
+
+       btnEviar.addEventListener('click', () => {
+         let dateNow = new Date();
+         date = {
+           year: dateNow.getFullYear(),
+           month: dateNow.getMonth(),
+           day: dateNow.getDate(),
+           hour: dateNow.getHours(),
+           minutes: dateNow.getMinutes()
+         }
+         socket.emit('chart:update', {
+            updateChart: true,
+            date: date
+         });
+       })
+      </script>
