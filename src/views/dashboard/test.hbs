@@ -1,0 +1,379 @@
+<div class="row">
+    <style>
+
+    #tbodyTable2{
+        font-size: smaller;
+    }
+    #tbodyTable2 > tr > td {
+        padding: 0.25rem;
+    }
+    .table{
+        margin-bottom: 0;
+    }
+</style>
+    <section class="cold-sm-12 mx-auto" id="dashboardTitleCard">
+        <div class="card-body">
+            <div class="text-center">
+                <h1 id="titulo">PRESIDENCIALES</h1>
+            </div>
+            <div class="d-flex flex-lg-row flex-column justify-content-around">
+            <!-- Filtro provincias -->
+            <div class="form-group">
+                <label>
+                    <strong>Provincia</strong>
+                </label>
+                <select class="form-control">
+                    <option value="">San Pedro de Macoris</option>
+                </select>
+            </div>
+
+            <!-- Filtro municipios -->
+            <div class="form-group ml-lg-2">
+                <label>
+                    <strong>Municipio</strong>
+                </label>
+               <select name="" id="municipio" class="form-control">
+                   <option value="todos">Todos</option>
+                   <option value="San Pedro">San Pedro de Macoris</option>
+                   <option value="Consuelo">Consuelo</option>
+                   <option value="Guayacanes">Guayacanes</option>
+                   <option value="Los Llanos">Los Llanos</option>
+                   <option value="Quisqueya">Quisqueya</option>
+                   <option value="Ramon Santana">Ramon Santana</option>
+               </select>
+            </div>
+
+            <!-- Filtro cargos -->
+            <div class="form-group ml-lg-2" id="Cargo">
+                <label>
+                    <strong>Nivel de Eleccion</strong>
+                </label>
+                <div>
+                    <select name="" id="nivelActa" class="form-control">
+                        <option value="presidencial">Presidencial</option>
+                        <option value="senatorial">Senatorial</option>
+                        <option value="diputadosd1">Diputados</option>
+                        <option value="diputadosd2">Diputados D1</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Filtro circunscripciones -->
+        
+
+            <div class="form-group ml-lg-2 d-flex flex-column justify-content-end">
+                <button class="btn btn-actualizar btn-primary" type="button" id="btnActualizar">
+                    <i class="fas fa-sync"></i>
+                    Actualizar
+                </button>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="col-lg-12 ui-sortable">
+        
+
+<div class="card presentarBoletin" style="position: relative; left: 0; right: 0;">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-8">
+                <b class="table-bordered">Progreso de Votación</b>
+            </div>
+            <div class="col-4">
+                <b id="ultimaActualizacion" class="table-title pull-right">Última Actualización: <span id="fecha">5 Julio 2020 05:00 pm</span></b>
+            </div>
+        </div>
+        <!-- /.card-tools -->
+    </div>
+    <!-- /.card-header -->
+    
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead></thead>
+                <tbody id="tbodyTable2">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="border-right"></td>
+                    <td>TOTAL DE INSCRITOS</td>
+                    <td id="totalInscritos" class="text-right">0</td>
+                    <td></td>
+                    <td class="border-right"></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="border-right"></td>
+                    <td>VOTOS EMITIDOS</td>
+                    <td id="votosEmitidos" class="text-right">0</td>
+                    <td id="porcentajeVotosEmitidos" class="text-right">0%</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>TOTAL DE COLEGIOS</td>
+                    <td id="totalColegios" class="text-right">0</td>
+                    <td></td>
+                    <td class="border-right"></td>
+                    <td>VOTOS VALIDOS</td>
+                    <td id="votosValidos" class="text-right">0</td>
+                    <td id="porcentajeVotosValidos" class="text-right">0%</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>COLEGIOS COMPUTADOS</td>
+                    <td id="colegiosComputados" class="text-right">0</td>
+                    <td id="porcentajeColegiosComputados" class="text-right">0%</td>
+                    <td class="border-right"></td>
+                    <td>VOTOS NULOS</td>
+                    <td id="votosNulos" class="text-right">0</td>
+                    <td id="porcentajeVotosNulos" class="text-right">0%</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>COLEGIOS FALTANTES</td>
+                    <td id="colegiosFaltantes" class="text-right">0</td>
+                    <td id="porcentajeColegiosFaltantes" class="text-right">0%</td>
+                    <td class="border-right"></td>
+                    <td>VOTOS OBSERVADOS</td>
+                    <td id="votosObservados" class="text-right">0</td>
+                    <td id="porcentajeVotosObservados" class="text-right">0%</td>
+                    <td></td>
+                </tr>
+                </tbody>
+                <tfoot></tfoot>
+            </table>
+        </div>
+    </div></div></div><div class="os-scrollbar os-scrollbar-horizontal os-scrollbar-unusable"><div class="os-scrollbar-track os-scrollbar-track-off"><div class="os-scrollbar-handle" style="width: 100%; transform: translate(0px, 0px);"></div></div></div><div class="os-scrollbar os-scrollbar-vertical os-scrollbar-unusable"><div class="os-scrollbar-track os-scrollbar-track-off"><div class="os-scrollbar-handle" style="height: 100%; transform: translate(0px, 0px);"></div></div></div><div class="os-scrollbar-corner"></div></div>
+</div>
+    </section>
+</div>
+<form >
+    {{!-- <input type="hidden" id="pld" value="{{votosPartidos.pld}}">
+    <input type="hidden" id="prm" value="{{votosPartidos.prm}}">
+    <input type="hidden" id="prd" value="{{votosPartidos.prd}}">
+    <input type="hidden" id="prsc" value="{{votosPartidos.prsc}}">
+    <input type="hidden" id="alpais" value="{{votosPartidos.alpais}}">
+    <input type="hidden" id="phd" value="{{votosPartidos.phd}}">
+    <input type="hidden" id="moda" value="{{votosPartidos.moda}}">
+    <input type="hidden" id="bis" value="{{votosPartidos.bis}}">
+    <input type="hidden" id="pcr" value="{{votosPartidos.pcr}}">
+    <input type="hidden" id="dxc" value="{{votosPartidos.dxc}}">
+    <input type="hidden" id="famplio" value="{{votosPartidos.famplio}}">
+    <input type="hidden" id="udc" value="{{votosPartidos.udc}}">
+    <input type="hidden" id="pqdc" value="{{votosPartidos.pqdc}}">
+    <input type="hidden" id="plr" value="{{votosPartidos.plr}}">
+    <input type="hidden" id="fp" value="{{votosPartidos.fp}}">
+    <input type="hidden" id="fnp" value="{{votosPartidos.fnp}}">
+    <input type="hidden" id="apd" value="{{votosPartidos.apd}}">
+    <input type="hidden" id="verde" value="{{votosPartidos.verde}}">
+    <input type="hidden" id="ppc" value="{{votosPartidos.ppc}}">
+    <input type="hidden" id="pal" value="{{votosPartidos.pal}}">
+    <input type="hidden" id="prsd" value="{{votosPartidos.prsd}}">
+    <input type="hidden" id="pdp" value="{{votosPartidos.pdp}}">
+    <input type="hidden" id="pdi" value="{{votosPartidos.pdi}}">
+    <input type="hidden" id="pri" value="{{votosPartidos.pri}}">
+    <input type="hidden" id="pun" value="{{votosPartidos.pun}}">
+    <input type="hidden" id="pnvc" value="{{votosPartidos.pnvc}}">
+    <input type="hidden" id="pp" value="{{votosPartidos.pp}}">
+    <input type="hidden" id="apld" value="{{votosAlianzas.pld}}">
+    <input type="hidden" id="aprm" value="{{votosAlianzas.prm}}">
+    <input type="hidden" id="afp" value="{{votosAlianzas.fp}}">
+    <input type="hidden" id="aalpais" value="{{votosAlianzas.alpais}}">
+    <input type="hidden" id="averde" value="{{votosAlianzas.verde}}">
+    <input type="hidden" id="apdi" value="{{votosAlianzas.pdi}}">
+    <input type="hidden" id="apnvc" value="{{votosAlianzas.pnvc}}"> --}}
+
+</form>
+
+
+
+
+
+
+
+
+
+<section class="col-lg-12" style="padding-left: 0; padding-right:0; margin-top: 1em;">
+        {{!-- <div class="card card-secondary card-outline-tabs">
+            <div class="card-header p-0 border-bottom-0">
+                <ul class="nav nav-tabs flex-lg-row flex-column" id="resultados-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="colegios-tab" data-toggle="tab" href="#colegios" role="tab" aria-controls="colegios" aria-selected="true" onclick="opcionesToolbarController.loadColegios()">Colegios</a>
+                    </li>
+                    <li id="Grafica-rar" class="nav-item presentarBoletin">
+                        <a class="nav-link" id="graficos-rar-tab" data-toggle="tab" data-tipo-resultado="A" href="#graficos" role="tab" aria-controls="graficos" aria-selected="false">
+                            Resultados Alianzas Resumido
+                        </a>
+                    </li>
+
+                    <li id="Grafica-rad" class="nav-item presentarBoletin">
+                        <a class="nav-link" id="graficos-rad-tab" data-toggle="tab" data-tipo-resultado="AD" href="#graficos" role="tab" aria-controls="graficos" aria-selected="false">
+                            Resultados Alianzas Detallado
+                        </a>
+                    </li>
+
+                    <li id="Grafica-sa" class="nav-item presentarBoletin">
+                        <a class="nav-link" id="graficos-sa-tab" data-toggle="tab" data-tipo-resultado="T" href="#graficos" role="tab" aria-controls="graficos" aria-selected="false">
+                            Resultados Sin Alianzas
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body os-host os-theme-dark os-host-resize-disabled os-host-scrollbar-horizontal-hidden os-host-scrollbar-vertical-hidden os-host-transition">
+                <div class="os-resize-observer-host">
+                    <div class="os-resize-observer observed" style="left: 0px; right: auto;">
+                        
+                    </div>
+                    </div>
+                    <div class="os-size-auto-observer" style="height: calc(100% + 1px); float: left;">
+                        <div class="os-resize-observer observed">
+                            
+                        </div>
+                        </div>
+                        <div id="chart" class="os-content-glue" style="margin: 0px -8px; height: 732px; width: 1124px;">
+                          
+
+                            </canvas>
+                        </div>
+                        <div class="os-padding">
+                            <div class="os-viewport os-viewport-native-scrollbars-invisible" style="right: 0px; bottom: 0px;">
+                                <div class="os-content" style="padding: 0px 8px; height: auto; width: 100%;">
+            </div>
+            </div>
+            </div>
+            </div>
+            </div> --}}
+           
+            
+            {{!-- <div class="row justify-content-end mt-3" id="chartContainerParent">
+                
+                <div class="col-md-1" id="chartImgContainer">
+                    <img class="imgChartA" src="/images/partidos/pld.png" class="card-img-top" alt="...">
+                    <img class="imgChartA" src="/images/partidos/prm.png" class="card-img-top" alt="...">
+                    <img class="imgChartA" src="/images/partidos/fp.png" class="card-img-top" alt="...">
+                    <img class="imgChartA" src="/images/partidos/alpais.png" class="card-img-top" alt="...">
+                    <img class="imgChartA" src="/images/partidos/verde.png" class="card-img-top" alt="...">
+                    <img class="imgChartA" src="/images/partidos/pdi.png" class="card-img-top" alt="...">
+                    <img class="imgChartA" src="/images/partidos/pnvc.png" class="card-img-top" alt="...">
+                </div>
+                <div class="col-md-11" id="chartContainer">
+                   
+                    <canvas id="myChart" width="100%" height="50em"></canvas>
+              
+                </div>
+                
+            </div> --}}
+
+            <div class="row">
+                <div class="card" style="width: 100%;">
+                    <div class="card-header p-0 border-bottom-0">
+                <ul class="nav nav-tabs flex-lg-row flex-column" id="resultados-tabs" role="tablist">
+                    
+                    <li id="Grafica-rar" class="nav-item presentarBoletin">
+                        <a class="nav-link active" id="graficos-rar-tab" data-toggle="tab" data-tipo-resultado="A" href="#graficos" role="tab" aria-controls="graficos" aria-selected="false">
+                            Resultados Alianzas Resumido
+                        </a>
+                    </li>
+
+                    {{!-- <li id="Grafica-rad" class="nav-item presentarBoletin">
+                        <a class="nav-link" id="graficos-rad-tab" data-toggle="tab" data-tipo-resultado="AD" href="#graficos" role="tab" aria-controls="graficos" aria-selected="false">
+                            Resultados Alianzas Detallado
+                        </a>
+                    </li> --}}
+
+                    <li id="Grafica-sa" class="nav-item presentarBoletin">
+                        <a class="nav-link" id="graficos-sa-tab" data-toggle="tab" data-tipo-resultado="T" href="#graficos" role="tab" aria-controls="graficos" aria-selected="false">
+                            Resultados Sin Alianzas
+                        </a>
+                    </li>
+                    <li class="nav-item" id="grafica-col">
+                        <a class="nav-link " id="escanos-tab" data-toggle="tab" href="#graficos" role="tab" aria-controls="colegios" aria-selected="true" style="display: none;" >
+                            Escanos
+                        </a>
+                    </li>
+                    <li class="nav-item" id="grafica-col">
+                        <a class="nav-link " id="diputados-tab" data-toggle="tab" href="#graficos" role="tab" aria-controls="colegios" aria-selected="true" style="display: none;">
+                            Diputados PRM
+                        </a>
+                    </li>
+                    <li class="nav-item" id="grafica-col">
+                        <a class="nav-link " id="colegios-tab" data-toggle="tab" href="#colegios" role="tab" aria-controls="colegios" aria-selected="true" >
+                            Colegios
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body"> 
+                <div class="row">
+
+                
+                <div class="col-md-1" id="chartImgContainer">
+                    <img class="imgChartA" src="/images/partidos/pld.png" class="card-img-top" alt="...">
+                    <img class="imgChartA" src="/images/partidos/prm.png" class="card-img-top" alt="...">
+                    <img name="img3" class="imgChartA" src="/images/partidos/fp.png" class="card-img-top" alt="...">
+                    <img class="imgChartA" src="/images/partidos/alpais.png" class="card-img-top" alt="...">
+                    <img class="imgChartA" src="/images/partidos/verde.png" class="card-img-top" alt="...">
+                    <img class="imgChartA" src="/images/partidos/pdi.png" class="card-img-top" alt="...">
+                    <img class="imgChartA" src="/images/partidos/pnvc.png" class="card-img-top" alt="...">
+                </div>
+                <div class="col-md-11" id="chartContainer">
+                   
+                    <canvas id="myChart" width="100%" height="60px"></canvas>
+                    
+                </div>
+
+                <div class="container-fluid" style="display: none;" id="colegiosContainer">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div id="colegiosCol"></div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div id="votosPartidos">
+                                    <table class="table table-striped ">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-left" scope="col" style="width: 80%">Partidos</th>
+                                                <th class="text-right" scope="col">Votos</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tableVotosContainer">
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div id="div2" class="container">
+                                    <div class="card-header" style="padding: 5px 20px; border: none">
+                                            <h6>Visor Acta</h6>
+                                        </div>
+                                        <div class="card-body container" style="height: 100%">
+                                            <div id="viewpdf" style="height: 100%"></div>
+                                        </div>
+                                        <div class="card-footer">
+                                            
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                </div>
+            </div>
+    </section>
+
+ <script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>   
+<script type="text/javascript" src="https://chartjs-plugin-datalabels.netlify.com/chartjs-plugin-datalabels.js"></script> 
+<script src="/socket.io/socket.io.js" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.js"></script>
+<script src="/javascript/moment-with-locales.min.js"></script>
+<script src="/javascript/dashboard.js"></script>
+
+

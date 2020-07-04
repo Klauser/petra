@@ -1,0 +1,95 @@
+{{#with errMessage}}
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+  {{text}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{{/with}}
+
+{{#with successMessage}}
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+  {{text}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{{/with}}
+
+
+
+<div class="row">
+        <div class="col text-center" id="imgtitle">
+            <img src="/images/school-icon.png"  id="documentLogo2" alt="" style="width: 10%;">
+        </div>
+    </div>
+
+
+<div class="col-md-8 mx-auto mt-1 fade1" id="ingresarCentroForm">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="text-center">INGRESAR CENTRO</h3>
+        </div>
+        <div class="card-body">
+            <form action="/centros/ingresar" method="POST" id="ingresarColegios">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" name="nombre" class="form-control" placeholder="Colegio" required  autofocus></input>
+                </div>
+                <div class="form-group row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">Municipio:</label>
+                    <div class="col-sm-6">
+                        <select type="text" name="municipio" class="form-control">
+                            <option value="San Pedro de Macoris">San Pedro de Macoris</option>
+                            <option value="Quisqueya">Quisqueya</option>
+                            <option value="Guayacanes">Guayacanes</option>
+                            <option value="Consuelo">Consuelo</option>
+                        </select>
+                    </div>
+                    <label for="zona" class="col-sm-2 col-form-label text-right">Zona:</label>
+                    <div class="col-sm-2">
+                         <input type="text" name="zona" class="form-control" required></input>
+                    </div>
+                </div>
+
+                <div class="form-group row align-items-center">
+                    <label for="staticEmail" class="col-sm-3 col-form-label">Colegios:</label>
+                    <label for="staticEmail" class="col-sm-2 col-form-label text-right">Eliminar</label>
+                    <div class="col-sm-1">
+                        {{!-- <img src="/images/add.png" alt="" class="litle-arrow-down" id="colegiosAddIcon"> --}}
+                        <i class="fas fa-minus-circle fa-lg" id="colegiosRemoveIcon"></i>
+                        
+                   </div>
+                    <label for="staticEmail" class="col-sm-2 col-form-label text-right">Agregar</label>
+                    <div class="col-sm-1 justify-content-center align-items-center">
+                        {{!-- <img src="/images/add.png" alt="" class="litle-arrow-down" id="colegiosAddIcon"> --}}
+                        <i class="fas fa-plus-circle fa-lg" id="colegiosAddIcon"></i>
+                        
+                   </div>
+                </div>
+
+                 <div class="form-group row" id="test" >
+                    <label for="1" class="col-sm-1 col-form-label" id="numberOneLabel">1</label>
+                    <div class="col-sm-3 colegioMargin">
+                        <input type="text" name="colegiosLower[]" class="form-control" required>
+                    </div>
+                </div>
+                {{!-- <div class="form-group" id="btnIngresarColegio">
+                    <button class="btn btn-primary btn-block" type="submit">
+                        Ingresar
+                    </button>
+                </div> --}}
+                <div class="form-group row justify-content-between">
+                    <div class="col-sm-6">
+                        <a href="../centros/seleccion" class="btn btn-danger" style="width: 10em; color: white;"><i class="fas fa-angle-double-left btn-arrow-icon"></i>Atras</a>
+                      </div>
+                  <div class="col-sm-6 justify-alig-end">
+                    <button type="submit" class="btn btn-primary" style="width: 10em; ">Enviar</button>
+                  </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="/javascript/main.js"></script>

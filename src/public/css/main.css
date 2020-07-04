@@ -1,0 +1,386 @@
+#documentLogo {
+    margin-top: 2em;
+    margin-bottom: 2em;
+   
+}
+
+#documentLogo2 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+   
+}
+
+#ingresarCentroForm {
+    font-size: 1.15rem;
+}
+
+#dashboardTitleCard .form-group {
+    margin-right: 4em;
+    margin-left: 1em;
+
+}
+
+#dashboardTitleCard h1 {
+    margin-bottom: 0.5em;
+    
+}
+#colegios-tab {
+    display: none;
+}
+
+.nav-custom {
+    background-color: #3498db;
+}
+
+.resaltar {
+    color: #3498db;
+}
+
+.litle-arrow-down {
+    width:40%;
+}
+
+.colegioMargin {
+    margin-bottom: 1em;
+}
+
+.btn-ingresar {
+    margin: 0.4em;
+}
+.btn-ingresar i {
+    margin-left: 5px;;
+}
+
+.btn-arrow-icon {
+    margin: 0 4px;
+    
+}
+
+
+.footer-index {
+    width: 100%;
+    color: #fff;
+    padding: 0.1em;
+    position: fixed;
+    bottom: 0px;
+    background-color: #2c3e50;
+    font-size: 0.7rem;
+}
+
+.footer-index p{
+    padding-top: 10px;
+}
+
+.index-content {
+    padding-top: 2em;
+}
+
+.card-yellow {
+    transition: width 0.5s ease;
+    width: 13rem;
+}
+
+.card-yellow:hover {
+    width: 13.3rem;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    border-color: #3498db;
+}
+
+.fa-plus-circle {
+    cursor: pointer;
+}
+
+.fa-minus-circle {
+    cursor: pointer;
+}
+
+.imgChartA {
+    width: 60%;
+    margin-top: 1.7em;
+}
+
+.imgChartA:first-child {
+   margin-top: 3.65em;
+}
+
+.imgChartB {
+    width: 60%;
+    margin-top: 2.2em;
+    display: block;
+    
+}
+.imgChartB:first-child {
+    margin-top: 3.65em;
+ }
+
+ .imgChartC {
+    width: 70%;
+    margin-top: 4.2em;
+    display: block;
+    
+}
+.imgChartC:first-child {
+    margin-top: 3.95em;
+ }
+
+ .imgChartD {
+    width: 30%;
+    margin-top: 1.8em;
+    display: block;
+    
+}
+.imgChartD:first-child {
+    margin-top: 3.35em;
+ }
+
+.noIngresado {
+    margin-left: 3em;
+    background-color: tomato;
+    color: white;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.centroText {
+    font-size: 0.85rem;
+}
+
+.colegioText {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.imgVotos {
+    width: 30px;
+    height: 30px;
+    max-width: 30px;
+    max-height: 30px;
+    margin-right: 1rem;
+}
+
+#chartImgContainer {
+    padding-right: 0;
+}
+
+#chartContainer {
+    padding-left: 0;
+    font-size: 1.4em;
+}
+
+
+
+ul {
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+}
+#canvas {
+    width: 100%;
+}
+
+#colegiosCol, #votosPartidos, #div2 {
+    width: 100%;
+    height: 600px;
+    border-radius: 5px;
+}
+
+#colegiosCol {
+    overflow: scroll;
+    max-height: 600px;
+    
+}
+
+#colegiosCol button {
+    display: block;
+    width: 100%;
+    height: 4em;
+    text-align: left;
+    background-color: white;
+    border: 1px 0;
+    border-style: solid;
+    border-width: thin;
+    padding-left: 1rem;
+}
+#colegiosCol button:hover {
+    background-color: rgba(116, 185, 255,0.1);
+}
+
+#colegiosCol::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+   /* Estilos barra (thumb) de scroll */
+  #colegiosCol::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+  }
+  
+  #colegiosCol::-webkit-scrollbar-thumb:active {
+    background-color: #999999;
+  }
+  
+  #colegiosCol::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+  }
+  
+   /* Estilos track de scroll */
+  #colegiosCol::-webkit-scrollbar-track {
+    background: #e1e1e1;
+    border-radius: 4px;
+  }
+  
+  #colegiosCol::-webkit-scrollbar-track:hover, 
+  #colegiosCol::-webkit-scrollbar-track:active {
+    background: #d4d4d4;
+  }
+  
+  #votosPartidos{
+    overflow: scroll;
+    max-height: 600px;
+  }
+
+  #votosPartidos table tr{
+    max-height: 30px !important;
+  }
+
+  #votosPartidos table td{
+    max-height: 55px !important;
+  }
+
+  #votosPartidos table td img{
+    margin-top: 0 !important;
+    margin-right: 16px !important;
+  }
+
+  #votosPartidos::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+   /* Estilos barra (thumb) de scroll */
+  #votosPartidos::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+  }
+  
+  #votosPartidos::-webkit-scrollbar-thumb:active {
+    background-color: #999999;
+  }
+  
+  #votosPartidos::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+  }
+  
+   /* Estilos track de scroll */
+  #votosPartidos::-webkit-scrollbar-track {
+    background: #e1e1e1;
+    border-radius: 4px;
+  }
+  
+  #votosPartidos::-webkit-scrollbar-track:hover, 
+  #votosPartidos::-webkit-scrollbar-track:active {
+    background: #d4d4d4;
+  }
+
+/* #div2 {
+    
+} */
+
+
+
+
+
+#card1, #card2, #card3, #card4, .fade1 {
+    margin-top: 25px;
+    font-size: 21px;
+    text-align: center;
+
+    -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 1s; /* Firefox < 16 */
+        -ms-animation: fadein 1s; /* Internet Explorer */
+         -o-animation: fadein 1s; /* Opera < 12.1 */
+            animation: fadein 1s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+
+
+.fade2 {
+    margin-top: 25px;
+    font-size: 21px;
+    text-align: center;
+
+    -webkit-animation: fadein1 1s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein1 1s; /* Firefox < 16 */
+        -ms-animation: fadein1 1s; /* Internet Explorer */
+         -o-animation: fadein1 1s; /* Opera < 12.1 */
+            animation: fadein1 1s;
+}
+
+@keyframes fadein1 {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein1 {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein1 {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein1 {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein1 {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+
+

@@ -1,0 +1,121 @@
+{{#with errMessage}}
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+  {{text}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{{/with}}
+
+{{#with successMessage}}
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+  {{text}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{{/with}}
+
+
+<div class="row">
+        <div class="col text-center" id="imgtitle">
+            <img src="/images/school-icon.png"  id="documentLogo2" alt="" style="width: 10%;">
+        </div>
+    </div>
+
+
+<div class="col-md-8 mx-auto mt-1">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="text-center">INGRESAR CENTRO</h3>
+        </div>
+        <div class="card-body">
+            <form action="/centros/{{centro._id}}?_method=PUT" method="POST" id="ingresarColegios">
+            <input type="hidden" name="_method" value="PUT">
+                <div class="form-group">
+                    <label for="nombre">Nombre: </label>
+                    <input type="text" name="nombre" class="form-control" placeholder="Colegio" required  autofocus value="{{centro.nombre}}"></input>
+                </div>
+                <div class="form-group row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">Municipio:</label>
+                    <div class="col-sm-6">
+                        <select type="text" name="municipio" class="form-control">
+                            {{#ifEquals centro.municipio 'San Pedro De Macoris'}}
+                                <option value="San Pedro de Macoris"  selected>San Pedro de Macoris</option>
+                                <option value="Quisqueya">Quisqueya</option>
+                                <option value="Guayacanes">Guayacanes</option>
+                                <option value="Consuelo">Consuelo</option>
+                            {{/ifEquals}}
+                            {{#ifEquals centro.municipio 'Quisqueya'}}
+                                <option value="San Pedro de Macoris"  >San Pedro de Macoris</option>
+                                <option value="Quisqueya" selected>Quisqueya</option>
+                                <option value="Guayacanes">Guayacanes</option>
+                                <option value="Consuelo">Consuelo</option>
+                            {{/ifEquals}}
+                            {{#ifEquals centro.municipio 'Guayacanes'}}
+                                <option value="San Pedro de Macoris" >San Pedro de Macoris</option>
+                                <option value="Quisqueya">Quisqueya</option>
+                                <option value="Guayacanes" selected>Guayacanes</option>
+                                <option value="Consuelo">Consuelo</option>
+                            {{/ifEquals}}
+                            {{#ifEquals centro.municipio 'Consuelo'}}
+                                <option value="San Pedro de Macoris"  selected>San Pedro de Macoris</option>
+                                <option value="Quisqueya">Quisqueya</option>
+                                <option value="Guayacanes">Guayacanes</option>
+                                <option value="Consuelo" selected>Consuelo</option>
+                            {{/ifEquals}}
+                                
+                            
+
+                        </select>
+                    </div>
+                    <label for="zona" class="col-sm-2 col-form-label text-right">Zona:</label>
+                    <div class="col-sm-2">
+                         <input type="text" name="zona" class="form-control" required value="{{centro.zona}}"></input>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                   <label for="staticEmail" class="col-sm-3 col-form-label">Colegios:</label>
+                    <label for="staticEmail" class="col-sm-2 col-form-label text-right">Eliminar</label>
+                    <div class="col-sm-1">
+                        {{!-- <img src="/images/add.png" alt="" class="litle-arrow-down" id="colegiosAddIcon"> --}}
+                        <i class="fas fa-minus-circle fa-lg" id="colegiosRemoveIcon"></i>
+                        
+                   </div>
+                    <label for="staticEmail" class="col-sm-2 col-form-label text-right">Agregar</label>
+                    <div class="col-sm-1 justify-content-center align-items-center">
+                        {{!-- <img src="/images/add.png" alt="" class="litle-arrow-down" id="colegiosAddIcon"> --}}
+                        <i class="fas fa-plus-circle fa-lg" id="colegiosAddIcon"></i>
+                        
+                   </div>
+                </div>
+
+                 <div class="form-group row" id="test" >
+                     {{#each centro.colegios}}
+                        <label for="1" class="col-sm-1 col-form-label">{{increment @index}}</label>
+                    <div class="col-sm-3 colegioMargin">
+                        <input type="text" name="colegiosLower[]" class="form-control" value="{{this}}">
+                    </div>
+                     {{/each}}
+                    
+                </div>
+                {{!-- <div class="form-group" id="btnIngresarColegio">
+                    <button class="btn btn-primary btn-block" type="submit">
+                        Ingresar
+                    </button>
+                </div> --}}
+                <div class="form-group row justify-content-between">
+                    <div class="col-sm-6">
+                        <a href="../centros/listar" class="btn btn-danger" style="width: 10em; color: white;">Cancelar</a>
+                      </div>
+                  <div class="col-sm-6 justify-alig-end">
+                    <button type="submit" class="btn btn-primary" style="width: 10em; ">Actualizar</button>
+                  </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="/javascript/main.js"></script>

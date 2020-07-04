@@ -1,0 +1,116 @@
+{{!-- <div class="row mt-5 text-center">
+  <div class="col-sm-5 mx-auto">
+    <h1>PANEL DE CONTROL</h1>
+  </div>
+</div> --}}
+
+<div class="row mt-5 text-center">
+  <div class="col-sm-4 mx-auto">
+     <img src="/images/cambio.png" width="70%">
+  </div>
+</div>
+
+<div class="row justify-content-around mt-4 index-content" >
+ 
+{{#ifEquals user.acceso 'administrador'}}
+<div class="card card-yellow" id="card1">
+  <img src="images/document-icon-t.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text"><a href="actas/seleccion"><button class="btn btn-block btn-primary">ACTAS</button></a></p>
+  </div>
+</div>
+{{/ifEquals}}
+
+{{#ifEquals user.acceso 'digitador'}}
+<div class="card card-yellow" id="card1">
+  <img src="images/document-icon-t.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text"><a href="actas/seleccion"><button class="btn btn-block btn-primary">ACTAS</button></a></p>
+  </div>
+</div>
+{{/ifEquals}}
+
+{{#ifEquals user.acceso 'verificador'}}
+<div class="card card-yellow" id="card1">
+  <img src="images/document-icon-t.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text"><a href="actas/seleccion"><button class="btn btn-block btn-primary">ACTAS</button></a></p>
+  </div>
+</div>
+{{/ifEquals}}
+
+
+
+
+{{#ifEquals user.acceso 'administrador'}}
+        <div class="card card-yellow" id="card2">
+  <img src="images/school-icon.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text"><a href="centros/seleccion"><button class="btn btn-block btn-primary">CENTROS</button></a></p>
+  </div>
+</div>      
+{{/ifEquals}}
+
+{{#ifEquals user.acceso 'administrador'}}
+      <div class="card card-yellow" id="card3">
+  <img src="images/statitics-icon.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text"><a href="dashboard"><button class="btn btn-block btn-primary">DASHBOARD</button></a></p>
+  </div>
+</div>   
+{{/ifEquals}}
+
+{{#ifEquals user.acceso 'observador'}}
+      <div class="card card-yellow" id="card3">
+  <img src="images/statitics-icon.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text"><a href="dashboard"><button class="btn btn-block btn-primary">DASHBOARD</button></a></p>
+  </div>
+</div>   
+{{/ifEquals}}
+
+
+
+
+{{#ifEquals user.acceso 'administrador'}}
+     <div class="card card-yellow" id="card4">
+  <img src="images/users-icon.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text"><a href="users/seleccion"><button class="btn btn-block btn-primary">USUARIOS</button></a></p>
+  </div>
+</div>        
+{{/ifEquals}}
+
+
+
+
+
+</div>
+
+
+
+
+
+{{!-- <script>
+
+  const card2 = document.getElementById('card2');
+  const card3 = document.getElementById('card3');
+  const card4 = document.getElementById('card4');
+
+  card2.style.display = "none";
+  card3.style.display = "none";
+  card4.style.display = "none";
+
+  setTimeout(function (){
+    card2.style.display = "block";
+  }, 150)
+
+   setTimeout(function (){
+    card3.style.display = "block";
+  }, 300)
+
+   setTimeout(function (){
+    card4.style.display = "block";
+  }, 450)
+
+</script> --}}

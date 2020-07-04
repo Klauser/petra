@@ -1,0 +1,94 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirmacion!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Ésta seguro de querer borrar este centro?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger" id="btnBorrarCentro">Eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="row">
+  <div class="col-sm-12">
+    <table class="table table-bordered mt-5" >
+  <thead class="thead-dark">
+    <tr align="center" valign="middle">
+      <th scope="col" >#</th>
+      <th scope="col" >Nombre</th>
+      <th scope="col" >Municipio</th>
+      <th scope="col" >Zona</th>
+      <th scope="col" >Colegios</th>
+      <th scope="col" >Accion</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each centros}}
+      <tr align="center">
+        <td>{{increment @index}}</td>
+        <td valign="middle" scope="row" class=" align-self-center" id={{_id}}>{{nombre}}</td>
+         <td><p class=" align-self-center">{{municipio}}</p></td>
+          <td>{{zona}}</td>
+           <td>
+             <table class="table table-borderless" width="100%">
+                <tbody>
+                   
+                  {{#each colegios}}
+                  <tr align="center" valign="middle"></tr>
+                  <td align="center" valign="middle">{{this}}</td>
+                </tr>
+              {{/each}}
+              
+                </tbody>
+             </table>   
+           </td>
+           <td>
+             <form action="/centros/{{_id}}" method="GET">
+             {{!-- <input type="hidden" name="_method" value="PUT"> --}}
+                <button type="submit" class="btn btn-success btn-ingresar">Editar <i class="fas fa-edit"></i></button>
+             </form>
+             <form action="/centros/{{_id}}?_method=DELETE" method="POST" id="formCentroDelete">
+             <input type="hidden" name="_method" value="DELETE">
+                {{!-- <button type="submit" class="btn btn-danger">Eliminar</button> --}}
+                 <button type="button" class="btn btn-danger btn-ingresar" data-toggle="modal" data-target="#exampleModal">Eliminar <i class="fas fa-trash"></i></button>
+             </form>
+             
+           </td>
+      </tr>
+    {{/each}}
+
+  </tbody>
+</table>
+
+  </div>
+</div>
+
+{{!-- <nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+  </ul>
+</nav> --}}
+
+<script>
+  const form = document.getElementById('formCentroDelete');
+  const btnBorrarCentro = document.getElementById('btnBorrarCentro');
+  btnBorrarCentro.addEventListener('click', () => {
+    form.submit();
+  })
+</script>

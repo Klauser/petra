@@ -1,0 +1,720 @@
+<div class="row">
+    <style>
+
+    #tbodyTable2{
+        font-size: smaller;
+    }
+    #tbodyTable2 > tr > td {
+        padding: 0.25rem;
+    }
+    .table{
+        margin-bottom: 0;
+    }
+</style>
+    <section class="cold-sm-12 mx-auto" id="dashboardTitleCard">
+        <div class="card-body">
+            <div class="text-center">
+                <h1 id="titulo">PRESIDENCIALES</h1>
+            </div>
+            <div class="d-flex flex-lg-row flex-column justify-content-around">
+            <!-- Filtro provincias -->
+            <div class="form-group">
+                <label>
+                    <strong>Provincia</strong>
+                </label>
+                <select class="form-control">
+                    <option value="">San Pedro de Macoris</option>
+                </select>
+            </div>
+
+            <!-- Filtro municipios -->
+            <div class="form-group ml-lg-2">
+                <label>
+                    <strong>Municipio</strong>
+                </label>
+               <select name="" id="municipio" class="form-control">
+                   <option value="sanpedro">San Pedro De Macoris</option>
+                   <option value="Consuelo">Consuelo</option>
+               </select>
+            </div>
+
+            <!-- Filtro cargos -->
+            <div class="form-group ml-lg-2" id="Cargo">
+                <label>
+                    <strong>Nivel de Eleccion</strong>
+                </label>
+                <div>
+                    <select name="" id="nivelActa" class="form-control">
+                        <option value="presidencial">Presidencial</option>
+                        <option value="senatorial">Senatorial</option>
+                        <option value="diputados">Diputados</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Filtro circunscripciones -->
+        
+
+            <div class="form-group ml-lg-2 d-flex flex-column justify-content-end">
+                <button class="btn btn-actualizar btn-primary" type="button" id="btnActualizar">
+                    <i class="fas fa-sync"></i>
+                    Actualizar
+                </button>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="col-lg-12 ui-sortable">
+        
+
+<div class="card presentarBoletin" style="position: relative; left: 0; right: 0;">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-8">
+                <b class="table-title">Progreso de Votación</b>
+            </div>
+            <div class="col-4">
+                <b id="ultimaActualizacion" class="table-title pull-right">Última Actualización: 15/04/2020 06:20 pm</b>
+            </div>
+        </div>
+        <!-- /.card-tools -->
+    </div>
+    <!-- /.card-header -->
+    
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead></thead>
+                <tbody id="tbodyTable2">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="border-right"></td>
+                    <td>TOTAL DE INSCRITOS</td>
+                    <td id="totalInscritos" class="text-right">0</td>
+                    <td></td>
+                    <td class="border-right"></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="border-right"></td>
+                    <td>VOTOS EMITIDOS</td>
+                    <td id="votosEmitidos" class="text-right">0</td>
+                    <td id="porcentajeVotosEmitidos" class="text-right">0%</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>TOTAL DE COLEGIOS</td>
+                    <td id="totalColegios" class="text-right">0</td>
+                    <td></td>
+                    <td class="border-right"></td>
+                    <td>VOTOS VALIDOS</td>
+                    <td id="votosValidos" class="text-right">0</td>
+                    <td id="porcentajeVotosValidos" class="text-right">0%</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>COLEGIOS COMPUTADOS</td>
+                    <td id="colegiosComputados" class="text-right">0</td>
+                    <td id="porcentajeColegiosComputados" class="text-right">0%</td>
+                    <td class="border-right"></td>
+                    <td>VOTOS NULOS</td>
+                    <td id="votosNulos" class="text-right">0</td>
+                    <td id="porcentajeVotosNulos" class="text-right">0%</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>COLEGIOS FALTANTES</td>
+                    <td id="colegiosFaltantes" class="text-right">0</td>
+                    <td id="porcentajeColegiosFaltantes" class="text-right">0%</td>
+                    <td class="border-right"></td>
+                    <td>VOTOS OBSERVADOS</td>
+                    <td id="votosObservados" class="text-right">0</td>
+                    <td id="porcentajeVotosObservados" class="text-right">0%</td>
+                    <td></td>
+                </tr>
+                </tbody>
+                <tfoot></tfoot>
+            </table>
+        </div>
+    </div></div></div><div class="os-scrollbar os-scrollbar-horizontal os-scrollbar-unusable"><div class="os-scrollbar-track os-scrollbar-track-off"><div class="os-scrollbar-handle" style="width: 100%; transform: translate(0px, 0px);"></div></div></div><div class="os-scrollbar os-scrollbar-vertical os-scrollbar-unusable"><div class="os-scrollbar-track os-scrollbar-track-off"><div class="os-scrollbar-handle" style="height: 100%; transform: translate(0px, 0px);"></div></div></div><div class="os-scrollbar-corner"></div></div>
+</div>
+    </section>
+</div>
+<form >
+    {{!-- <input type="hidden" id="pld" value="{{votosPartidos.pld}}">
+    <input type="hidden" id="prm" value="{{votosPartidos.prm}}">
+    <input type="hidden" id="prd" value="{{votosPartidos.prd}}">
+    <input type="hidden" id="prsc" value="{{votosPartidos.prsc}}">
+    <input type="hidden" id="alpais" value="{{votosPartidos.alpais}}">
+    <input type="hidden" id="phd" value="{{votosPartidos.phd}}">
+    <input type="hidden" id="moda" value="{{votosPartidos.moda}}">
+    <input type="hidden" id="bis" value="{{votosPartidos.bis}}">
+    <input type="hidden" id="pcr" value="{{votosPartidos.pcr}}">
+    <input type="hidden" id="dxc" value="{{votosPartidos.dxc}}">
+    <input type="hidden" id="famplio" value="{{votosPartidos.famplio}}">
+    <input type="hidden" id="udc" value="{{votosPartidos.udc}}">
+    <input type="hidden" id="pqdc" value="{{votosPartidos.pqdc}}">
+    <input type="hidden" id="plr" value="{{votosPartidos.plr}}">
+    <input type="hidden" id="fp" value="{{votosPartidos.fp}}">
+    <input type="hidden" id="fnp" value="{{votosPartidos.fnp}}">
+    <input type="hidden" id="apd" value="{{votosPartidos.apd}}">
+    <input type="hidden" id="verde" value="{{votosPartidos.verde}}">
+    <input type="hidden" id="ppc" value="{{votosPartidos.ppc}}">
+    <input type="hidden" id="pal" value="{{votosPartidos.pal}}">
+    <input type="hidden" id="prsd" value="{{votosPartidos.prsd}}">
+    <input type="hidden" id="pdp" value="{{votosPartidos.pdp}}">
+    <input type="hidden" id="pdi" value="{{votosPartidos.pdi}}">
+    <input type="hidden" id="pri" value="{{votosPartidos.pri}}">
+    <input type="hidden" id="pun" value="{{votosPartidos.pun}}">
+    <input type="hidden" id="pnvc" value="{{votosPartidos.pnvc}}">
+    <input type="hidden" id="pp" value="{{votosPartidos.pp}}">
+    <input type="hidden" id="apld" value="{{votosAlianzas.pld}}">
+    <input type="hidden" id="aprm" value="{{votosAlianzas.prm}}">
+    <input type="hidden" id="afp" value="{{votosAlianzas.fp}}">
+    <input type="hidden" id="aalpais" value="{{votosAlianzas.alpais}}">
+    <input type="hidden" id="averde" value="{{votosAlianzas.verde}}">
+    <input type="hidden" id="apdi" value="{{votosAlianzas.pdi}}">
+    <input type="hidden" id="apnvc" value="{{votosAlianzas.pnvc}}"> --}}
+
+</form>
+
+
+
+
+
+
+
+
+
+<section class="col-lg-12" style="padding-left: 0; padding-right:0; margin-top: 1em;">
+        {{!-- <div class="card card-secondary card-outline-tabs">
+            <div class="card-header p-0 border-bottom-0">
+                <ul class="nav nav-tabs flex-lg-row flex-column" id="resultados-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="colegios-tab" data-toggle="tab" href="#colegios" role="tab" aria-controls="colegios" aria-selected="true" onclick="opcionesToolbarController.loadColegios()">Colegios</a>
+                    </li>
+                    <li id="Grafica-rar" class="nav-item presentarBoletin">
+                        <a class="nav-link" id="graficos-rar-tab" data-toggle="tab" data-tipo-resultado="A" href="#graficos" role="tab" aria-controls="graficos" aria-selected="false">
+                            Resultados Alianzas Resumido
+                        </a>
+                    </li>
+
+                    <li id="Grafica-rad" class="nav-item presentarBoletin">
+                        <a class="nav-link" id="graficos-rad-tab" data-toggle="tab" data-tipo-resultado="AD" href="#graficos" role="tab" aria-controls="graficos" aria-selected="false">
+                            Resultados Alianzas Detallado
+                        </a>
+                    </li>
+
+                    <li id="Grafica-sa" class="nav-item presentarBoletin">
+                        <a class="nav-link" id="graficos-sa-tab" data-toggle="tab" data-tipo-resultado="T" href="#graficos" role="tab" aria-controls="graficos" aria-selected="false">
+                            Resultados Sin Alianzas
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body os-host os-theme-dark os-host-resize-disabled os-host-scrollbar-horizontal-hidden os-host-scrollbar-vertical-hidden os-host-transition">
+                <div class="os-resize-observer-host">
+                    <div class="os-resize-observer observed" style="left: 0px; right: auto;">
+                        
+                    </div>
+                    </div>
+                    <div class="os-size-auto-observer" style="height: calc(100% + 1px); float: left;">
+                        <div class="os-resize-observer observed">
+                            
+                        </div>
+                        </div>
+                        <div id="chart" class="os-content-glue" style="margin: 0px -8px; height: 732px; width: 1124px;">
+                          
+
+                            </canvas>
+                        </div>
+                        <div class="os-padding">
+                            <div class="os-viewport os-viewport-native-scrollbars-invisible" style="right: 0px; bottom: 0px;">
+                                <div class="os-content" style="padding: 0px 8px; height: auto; width: 100%;">
+            </div>
+            </div>
+            </div>
+            </div>
+            </div> --}}
+           
+            
+            {{!-- <div class="row justify-content-end mt-3" id="chartContainerParent">
+                
+                <div class="col-md-1" id="chartImgContainer">
+                    <img class="imgChartA" src="/images/partidos/pld.png" class="card-img-top" alt="...">
+                    <img class="imgChartA" src="/images/partidos/prm.png" class="card-img-top" alt="...">
+                    <img class="imgChartA" src="/images/partidos/fp.png" class="card-img-top" alt="...">
+                    <img class="imgChartA" src="/images/partidos/alpais.png" class="card-img-top" alt="...">
+                    <img class="imgChartA" src="/images/partidos/verde.png" class="card-img-top" alt="...">
+                    <img class="imgChartA" src="/images/partidos/pdi.png" class="card-img-top" alt="...">
+                    <img class="imgChartA" src="/images/partidos/pnvc.png" class="card-img-top" alt="...">
+                </div>
+                <div class="col-md-11" id="chartContainer">
+                   
+                    <canvas id="myChart" width="100%" height="50em"></canvas>
+              
+                </div>
+                
+            </div> --}}
+
+            <div class="row">
+                <div class="card" style="width: 100%;">
+                    <div class="card-header p-0 border-bottom-0">
+                <ul class="nav nav-tabs flex-lg-row flex-column" id="resultados-tabs" role="tablist">
+                    {{!-- <li class="nav-item">
+                        <a class="nav-link active" id="colegios-tab" data-toggle="tab" href="#colegios" role="tab" aria-controls="colegios" aria-selected="true" onclick="opcionesToolbarController.loadColegios()">Colegios</a>
+                    </li> --}}
+                    <li id="Grafica-rar" class="nav-item presentarBoletin">
+                        <a class="nav-link" id="graficos-rar-tab" data-toggle="tab" data-tipo-resultado="A" href="#graficos" role="tab" aria-controls="graficos" aria-selected="false">
+                            Resultados Alianzas Resumido
+                        </a>
+                    </li>
+
+                    {{!-- <li id="Grafica-rad" class="nav-item presentarBoletin">
+                        <a class="nav-link" id="graficos-rad-tab" data-toggle="tab" data-tipo-resultado="AD" href="#graficos" role="tab" aria-controls="graficos" aria-selected="false">
+                            Resultados Alianzas Detallado
+                        </a>
+                    </li> --}}
+
+                    <li id="Grafica-sa" class="nav-item presentarBoletin">
+                        <a class="nav-link" id="graficos-sa-tab" data-toggle="tab" data-tipo-resultado="T" href="#graficos" role="tab" aria-controls="graficos" aria-selected="false">
+                            Resultados Sin Alianzas
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body"> 
+                <div class="row">
+
+                
+                <div class="col-md-1" id="chartImgContainer">
+                    <img class="imgChartA" src="/images/partidos/pld.png" class="card-img-top" alt="...">
+                    <img class="imgChartA" src="/images/partidos/prm.png" class="card-img-top" alt="...">
+                    <img name="img3" class="imgChartA" src="/images/partidos/fp.png" class="card-img-top" alt="...">
+                    <img class="imgChartA" src="/images/partidos/alpais.png" class="card-img-top" alt="...">
+                    <img class="imgChartA" src="/images/partidos/verde.png" class="card-img-top" alt="...">
+                    <img class="imgChartA" src="/images/partidos/pdi.png" class="card-img-top" alt="...">
+                    <img class="imgChartA" src="/images/partidos/pnvc.png" class="card-img-top" alt="...">
+                </div>
+                <div class="col-md-11" id="chartContainer">
+                   
+                    <canvas id="myChart" width="100%" style="font-size: 2em;"></canvas>
+                
+              
+                </div>
+                </div>
+            </div>
+                </div>
+            </div>
+    </section>
+
+ <script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>   
+<script type="text/javascript" src="https://chartjs-plugin-datalabels.netlify.com/chartjs-plugin-datalabels.js"></script> 
+<script>
+
+
+
+let titulo = document.getElementById('titulo');
+const btnActualizar = document.getElementById('btnActualizar');
+let municipio = document.getElementById('municipio');
+let nivelActa = document.getElementById('nivelActa');
+let colegiosFaltantes = document.getElementById('colegiosFaltantes'); 
+let totalInscritos = document.getElementById('totalInscritos');
+let totalColegios = document.getElementById('totalColegios'); 
+let porcentajeVotosValidos = document.getElementById('porcentajeVotosValidos');
+let colegiosComputados = document.getElementById('colegiosComputados');
+let porcentajeColegiosComputados = document.getElementById('porcentajeColegiosComputados');
+let votosNulos = document.getElementById('votosNulos');
+let porcentajeVotosNulos = document.getElementById('porcentajeVotosNulos');
+let porcentajeColegiosFaltantes = document.getElementById('porcentajeColegiosFaltantes');
+let votosObservados = document.getElementById('votosObservados');
+let porcentajeVotosObservados = document.getElementById('porcentajeVotosObservados');
+let votosEmitidos = document.getElementById('votosEmitidos');
+let votosValidos = document.getElementById('votosValidos');
+let porcentajeVotosEmitidos = document.getElementById('porcentajeVotosEmitidos');
+
+
+let chartContainer = document.getElementById('chartContainer');
+    let chartImgContainer = document.getElementById('chartImgContainer');
+    const btnGraficosAlianzas =  document.getElementById('graficos-rar-tab');
+    const btnGraficosSinAlianzas =  document.getElementById('graficos-sa-tab');
+
+const imgs = {
+            img1: document.createElement('img'),
+            img2: document.createElement('img'),
+            img3: document.createElement('img'),
+            img4: document.createElement('img'),
+            img5: document.createElement('img'),
+            img6: document.createElement('img'),
+            img7: document.createElement('img'),
+            img8: document.createElement('img'),
+            img9: document.createElement('img'),
+            img10: document.createElement('img'),
+            img11: document.createElement('img'),
+            img12: document.createElement('img'),
+            img13: document.createElement('img'),
+            img14: document.createElement('img'),
+            img15: document.createElement('img'),
+            img16: document.createElement('img'),
+            img17: document.createElement('img'),
+            img18: document.createElement('img'),
+            img19: document.createElement('img'),
+            img20: document.createElement('img'),
+            img21: document.createElement('img'),
+            img22: document.createElement('img'),
+            img23: document.createElement('img'),
+            img24: document.createElement('img'),
+            img25: document.createElement('img'),
+            img26: document.createElement('img'),
+            img27: document.createElement('img'),
+        };
+
+    imgs.img1.setAttribute('src', '/images/partidos/pld.png');
+    imgs.img2.setAttribute('src', '/images/partidos/prm.png');
+    imgs.img3.setAttribute('src', '/images/partidos/prd.png');
+    imgs.img4.setAttribute('src', '/images/partidos/prsc.png');
+    imgs.img5.setAttribute('src', '/images/partidos/alpais.png');
+    imgs.img6.setAttribute('src', '/images/partidos/phd.png');
+    imgs.img7.setAttribute('src', '/images/partidos/moda.png');
+    imgs.img8.setAttribute('src', '/images/partidos/bis.png');
+    imgs.img9.setAttribute('src', '/images/partidos/pcr.png');
+    imgs.img10.setAttribute('src', '/images/partidos/dxc.png');
+    imgs.img11.setAttribute('src', '/images/partidos/famplio.png');
+    imgs.img12.setAttribute('src', '/images/partidos/udc.png');
+    imgs.img13.setAttribute('src', '/images/partidos/pqdc.png');
+    imgs.img14.setAttribute('src', '/images/partidos/plr.png');
+    imgs.img15.setAttribute('src', '/images/partidos/fp.png');
+    imgs.img16.setAttribute('src', '/images/partidos/fnp.png');
+    imgs.img17.setAttribute('src', '/images/partidos/apd.png');
+    imgs.img18.setAttribute('src', '/images/partidos/verde.png');
+    imgs.img19.setAttribute('src', '/images/partidos/ppc.png');
+    imgs.img20.setAttribute('src', '/images/partidos/pal.png');
+    imgs.img21.setAttribute('src', '/images/partidos/prsd.png');
+    imgs.img22.setAttribute('src', '/images/partidos/pdp.png');
+    imgs.img23.setAttribute('src', '/images/partidos/pdi.png');
+    imgs.img24.setAttribute('src', '/images/partidos/pri.png');
+    imgs.img25.setAttribute('src', '/images/partidos/pun.png');
+    imgs.img26.setAttribute('src', '/images/partidos/pnvc.png');
+    imgs.img27.setAttribute('src', '/images/partidos/pp.png');
+
+    let pld = 0;
+    let prm = 0;
+    let prd = 0;
+    let prsc = 0;
+    let alpais = 0;
+    let phd = 0;
+    let moda = 0;
+    let bis = 0;
+    let pcr = 0;
+    let dxc = 0;
+    let famplio = 0;
+    let udc = 0;
+    let pqdc = 0;
+    let plr = 0;
+    let fp = 0;
+    let fnp = 0;
+    let apd = 0;
+    let verde = 0;
+    let ppc = 0;
+    let pal = 0;
+    let prsd = 0;
+    let pdp = 0;
+    let pdi = 0;
+    let pri = 0;
+    let pun = 0;
+    let pnvc = 0;
+    let pp = 0;
+    let apld = 0;
+    let aprm = 0;
+    let afp = 0;
+    let aalpais = 0;
+    let averde = 0;
+    let apdi = 0;
+    let apnvc = 0;
+
+
+
+ let ctx = document.getElementById('myChart');
+
+    let myChart = new Chart(ctx, {
+    type: 'horizontalBar',
+    data: {
+        labels: ['PLD Y AL.', 'PRM Y AL.', 'FP Y AL.', 'ALPAIS', 'P. VERDE', 'PDI', "PNVC"],
+        datasets: [{
+            data: [0, 0, 0, 0, 0, 0, 0],
+            backgroundColor: [
+                'rgba(102, 0, 102, 0.3)',
+                'rgba(54, 162, 235, 0.3)',
+                'rgba(0, 153, 51, 0.3)',
+                'rgba(0, 255, 153, 0.3)',
+                'rgba(204, 255, 102, 0.3)',
+                'rgba(255, 159, 64, 0.3)',
+                'rgba(255, 0, 0, 0.3)'
+
+            ],
+            borderColor: [
+                'rgba(102, 0, 102, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(0, 153, 51, 1)',
+                'rgba(0, 255, 153, 1)',
+                'rgba(204, 255, 102, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(255, 0, 0, 0.1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+       
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    fontSize: 40
+                },gridLines: {
+                color: "rgba(0, 0, 0, 0)",
+            }
+            }],
+            xAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    fontSize: 40
+                },gridLines: {
+                color: "rgba(0, 0, 0, 0)",
+            }
+            }] 
+        },
+        title: {
+            text: 'Votos Por Alianza',
+            display:true,
+            fontSize: 25,
+            padding: 4
+        },
+        legend: {
+            display: false,
+            labels: {
+                // This more specific font property overrides the global property
+                fontColor: 'red'
+            }
+        },
+        plugins: {
+      datalabels: {
+        font: {
+                            weight: 'bold'
+                        },
+        align: 'end',
+        anchor: 'end',
+        backgroundColor: function(context) {
+          return context.dataset.backgroundColor;
+        },
+        borderRadius: 4,
+        color: 'black',
+        formatter: function(value){
+           return value;
+        }
+      },
+    }
+    }
+});
+
+
+
+
+$(window).on( 'load', () => {
+    $.ajax({
+        url: '/dashboard/sanpedro/presidencial',
+        success: function (acta) {
+            colegiosFaltantes.innerText = acta.colegio.faltantes;
+            totalInscritos.innerText = acta.inscritos.sanPedro;
+            totalColegios.innerText = acta.colegio.total;
+            colegiosComputados.innerText = acta.colegio.computados;
+            porcentajeColegiosComputados.innerText = acta.colegio.porcientoComputado + '%';
+            porcentajeColegiosFaltantes.innerText = acta.colegio.porcientoFaltante + '%';
+
+            votosEmitidos.innerText = acta.votos.emitidos;
+            votosValidos.innerText = acta.votos.validos;
+            votosNulos.innerText = acta.votos.nulos;
+            votosObservados.innerText = acta.votos.observados;
+            porcentajeVotosEmitidos.innerText = acta.votos.porcientoEmitidos + '%';
+            porcentajeVotosValidos.innerText = acta.votos.porcientoValidos + '%';
+            porcentajeVotosNulos.innerText = acta.votos.porcientoNulos + '%';
+            porcentajeVotosObservados.innerText = acta.votos.porcientoObservados + '%';
+
+
+    
+    pld = acta.votosPartidos.pld;
+    prm = acta.votosPartidos.prm;
+    prd = acta.votosPartidos.prd;
+    prsc = acta.votosPartidos.prsc;
+    alpais = acta.votosPartidos.alpais;
+    phd = acta.votosPartidos.phd;
+    moda = acta.votosPartidos.moda;
+    bis = acta.votosPartidos.bis;
+    pcr = acta.votosPartidos.pcr;
+    dxc = acta.votosPartidos.dxc;
+    famplio = acta.votosPartidos.famplio;
+    udc = acta.votosPartidos.udc;
+    pqdc = acta.votosPartidos.pqdc;
+    plr = acta.votosPartidos.plr;
+    fp = acta.votosPartidos.fp;
+    fnp = acta.votosPartidos.fnp;
+    apd = acta.votosPartidos.apd;
+    verde = acta.votosPartidos.verde;
+    ppc = acta.votosPartidos.ppc;
+    pal = acta.votosPartidos.pal;
+    prsd = acta.votosPartidos.prsd;
+    pdp = acta.votosPartidos.pdp;
+    pdi = acta.votosPartidos.pdi;
+    pri = acta.votosPartidos.pri;
+    pun = acta.votosPartidos.pun;
+    pnvc = acta.votosPartidos.pnvc;
+    pp = acta.votosPartidos.pp;    
+    apld = acta.votosAlianzas.pld;
+    aprm = acta.votosAlianzas.prm;
+    afp = acta.votosAlianzas.fp;
+    aalpais = acta.votosAlianzas.alpais;
+    averde = acta.votosAlianzas.verde;
+    apdi = acta.votosAlianzas.pdi;
+    apnvc = acta.votosAlianzas.pnvc;
+
+    myChart.data.datasets[0].data = [apld, aprm, afp, aalpais, averde, apdi, apnvc];
+    myChart.update();
+   
+
+
+        }
+    });
+});
+
+let municipioUrl = municipio.value.toLowerCase().replace(/\s+/g, '');
+let nivelActaUrl = nivelActa.value.toLowerCase();
+
+
+
+btnActualizar.addEventListener('click', () => {
+    municipioUrl = municipio.value.toLowerCase().replace(/\s+/g, '');
+        nivelActaUrl = nivelActa.value.toLowerCase();
+        const url = `/dashboard/${municipioUrl}/${nivelActaUrl}`
+        
+        $.ajax({
+        url: url,
+        success: function (acta) {
+            console.log(url);
+            console.log(acta);
+            colegiosFaltantes.innerText = acta.colegio.faltantes;
+            totalInscritos.innerText = acta.inscritos.sanPedro;
+            totalColegios.innerText = acta.colegio.total;
+            colegiosComputados.innerText = acta.colegio.computados;
+            porcentajeColegiosComputados.innerText = acta.colegio.porcientoComputado + '%';
+            porcentajeColegiosFaltantes.innerText = acta.colegio.porcientoFaltante + '%';
+
+            votosEmitidos.innerText = acta.votos.emitidos;
+            votosValidos.innerText = acta.votos.validos;
+            votosNulos.innerText = acta.votos.nulos;
+            votosObservados.innerText = acta.votos.observados;
+            porcentajeVotosEmitidos.innerText = acta.votos.porcientoEmitidos + '%';
+            porcentajeVotosValidos.innerText = acta.votos.porcientoValidos + '%';
+            porcentajeVotosNulos.innerText = acta.votos.porcientoNulos + '%';
+            porcentajeVotosObservados.innerText = acta.votos.porcientoObservados + '%';
+
+            apld = acta.votosAlianzas.pld;
+            aprm = acta.votosAlianzas.prm;
+            afp = acta.votosAlianzas.fp;
+            aalpais = acta.votosAlianzas.alpais;
+            averde = acta.votosAlianzas.verde;
+            apdi = acta.votosAlianzas.pdi;
+            apnvc = acta.votosAlianzas.pnvc;
+
+            myChart.data.datasets[0].data = [apld, aprm, afp, aalpais, averde, apdi, apnvc];
+            myChart.update();
+
+
+        }
+    });
+})
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+    
+
+    
+    console.log(imgs);
+    
+
+    btnGraficosSinAlianzas.addEventListener('click', () => {
+    
+        chartImgContainer.innerHTML = '';
+        
+           
+        {{!-- ctx.height = 200; --}}
+        myChart.options.title.text = "Partidos Sin Alianzas";
+        myChart.data.labels = ['PLD', 'PRM', 'PRD', 'PRSC', 'ALPAIS', 'PHD', "MODA", 'BIS', 'PCR','DXC', 'F.AMPLIO', 'UDC', 'PQDC', 'PLR', 'FP', 'FNP', 'APD',  'P. VERDE', 'PPC', 'PAL', 'PRSD', 'PDP', 'PDI', 'PRI', 'PUN', 'PNVC', 'PP'];
+        myChart.data.datasets[0].data = [pld, prm, prd, prsc, alpais, phd, moda, bis, pcr, dxc, famplio, udc, pqdc, plr, fp, fnp, apd, verde, ppc, pal, prsd, pdp, pdi, pri, pun, pnvc, pp];
+        /*myChart.data.datasets[0].barThickness = 25;
+        myChart.data.datasets[0].barPercentage = 1;
+        myChart.data.datasets[0].categoryPercentage = 1;
+        myChart.options.legend.labels.defaultFontSize = 40;*/
+        myChart.data.datasets.forEach((dataset) => {
+        dataset.backgroundColor.push('rgba(230, 230, 230, 0.4)');
+        dataset.backgroundColor.push('rgba(230, 230, 230, 1)');
+    });
+        
+        myChart.update();
+        
+  
+
+});
+
+
+
+
+    btnGraficosAlianzas.addEventListener('click', () => {
+       
+
+        chartImgContainer.innerHTML = '';
+        
+        for(let prop in imgs ) {
+        imgs[prop].classList.add('imgChartA', 'card-img-top');
+        imgs[prop].style.height= '2.6em';
+        
+        }
+        
+        chartImgContainer.appendChild(imgs.img1);
+        chartImgContainer.appendChild(imgs.img2);
+        chartImgContainer.appendChild(imgs.img15);
+        chartImgContainer.appendChild(imgs.img5);
+        chartImgContainer.appendChild(imgs.img18);
+        chartImgContainer.appendChild(imgs.img23);
+        chartImgContainer.appendChild(imgs.img26);
+
+        
+        myChart.options.title.text = "Partidos Con Alianzas";
+        myChart.data.labels = ['PLD Y AL.', 'PRM Y AL.', 'FP Y AL.', 'ALPAIS', 'P. VERDE', 'PDI', "PNVC"];
+        myChart.data.datasets[0].data = [apld, aprm, afp, aalpais, averde, apdi, apnvc];
+        
+        
+        myChart.update();
+
+});
+
+
+
+    
+</script>
+
+
