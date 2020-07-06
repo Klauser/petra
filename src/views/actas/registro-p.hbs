@@ -1,0 +1,216 @@
+<div class="row title">
+          <div class="col text-center">
+              <h1>CENTRO: {{centro.nombre}}</h1>
+              
+              <h2>ACTA: <span class="resaltar">PRESIDENCIAL</span>   COLEGIO: <span class="resaltar">{{colegio}}</span> </h2>
+          </div>
+      </div>
+      <div class="row justify-content-center align-items-center">
+          <div class="col-12 col-sm-6">
+              <div class="card">
+                  <div class="card-body">
+                      <form class="form-container" action="/actas/ingresar/p" method="POST" id="formActaP">
+                      <input type="hidden" name="centro" value="{{centro.nombre}}">
+                      <input type="hidden" name="colegio" value="{{colegio}}">
+                      <input type="hidden" name="municipio" value="{{municipio}}">
+                <div class="form-group row">
+                  <label for="pld" class="col-sm-3 col-form-label">1.PLD</label>
+                  <div class="col-sm-9">
+                    <input type="number" name="votos[pld]" class="form-control" id="inputEmail3" min="0" max="999" autofocus required>
+                  </div>
+                </div>
+                <div class="form-group row">
+                    <label for="prm" class="col-sm-3 col-form-label">2.PRM</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[prm]" class="form-control" id="inputEmail3"  min="0" required>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">3.PRSC</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[prsc]" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="prd"  class="col-sm-3 col-form-label">4.PRD</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[prd]" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">5.BIS</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[bis]" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">6.MODA</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[moda]" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  
+                  
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">7.PUN</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[pun]" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">8.ALPAIS</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[alpais]" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">9.F. AMPLIO</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[famplio]" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">10.PHD</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[phd]" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">11.PQDC</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[pqdc]" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">12.PCR</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[pcr]" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">13.DXC</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[dxc]" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">14.PLR</label>
+                    <div class="col-sm-9">
+                      <input type="number" disabled value="0" name="votos[plr]" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">15.UDC</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[udc]" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">16.PRSD</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[prsd]" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">17.FNP</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[fnp]" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">18.FP</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[fp]" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">19.PPC</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[ppc]" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">20.VERDE</label>
+                    <div class="col-sm-9">
+                      <input type="number" disabled value="0" name="votos[verde]" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">21.PAL</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[pal]" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">22.APD</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[apd]" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">23.PDI</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[pdi]" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  
+                  
+                  
+                  
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">24.PDP</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[pdp]" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">25.PRI</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[pri]" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">26.PNVC</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[pnvc]" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">27.PP</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votos[pp]" class="form-control" id="inputEmail3" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">VOTOS NULOS</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="votosNulos" class="form-control" required min="0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">BOLETAS OBSERVADAS</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="boletasObservadas" class="form-control" required min="0">
+                    </div>
+                  </div>
+                <div class="form-group row justify-content-between">
+                    <div class="col-sm-4">
+                        <a href="../actas/seleccion " class=" btn btn-danger" style="width: 10em;">Atras</a>
+                      </div>
+                  <div class="col-sm-4 ">
+                    <button type="submit" class="btn btn-primary" style="width: 10em;" id="btnEnviar">Enviar</button>
+                  </div>
+                </div>
+              </form>
+          </div>
+                  </div>
+              </div>
+            
+      </div>
+
+      
